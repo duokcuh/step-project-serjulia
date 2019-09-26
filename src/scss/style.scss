@@ -160,13 +160,10 @@ ol, ul {
 }
 
 .top-slider {
-  position: relative;
   margin-bottom: 75px;
   &-text {
     @include flex-center;
-    position: absolute;
-    margin: -60% 3.5% 0 3.5%;
-    height: 70%;
+    height: 212px;
     width: 93%;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
@@ -195,10 +192,21 @@ ol, ul {
     padding: 20px 28px;
   }
 }
-//
-//.carousel-img {   // Яклсь це вирішити. Можливо знайти іншу картинку такого самого розміру
-//  height: 300px;
-//}
+
+.carousel-img {   // Яклсь це вирішити. Можливо знайти іншу картинку такого самого розміру
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 6.5%;
+}
+
+.carousel-img-1 {
+  background-image: url("../img/top-slider/1.jpg");
+}
+
+.carousel-img-2 {
+  background-image: url("../img/top-slider/2.jpg");
+}
 
 .carousel-arrow {
   background-color: $dark-grey;
@@ -273,7 +281,13 @@ ol, ul {
     display: inline-block;
   }
 
-  //.carousel-img {
-  //  height: 500px;
-  //}
+  .carousel-img {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .top-slider-text {
+    width: 100%;
+}
 }
