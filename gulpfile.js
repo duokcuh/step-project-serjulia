@@ -18,7 +18,7 @@ const path = {
         html: 'src/*.html',
         scss: 'src/scss/**/*.scss',
         js: 'src/js/*.js',
-        img: 'src/img/**/*.*'
+        img: 'src/img/**/*'
     }
 };
 
@@ -74,12 +74,13 @@ const watcher = () => {
 
 /************ T A S K S **************/
 gulp.task('html', htmlBuild);
-gulp.task('img', imgBuild);
 gulp.task('scss', scssBuild);
 gulp.task('js', jsBuild);
+gulp.task('img', imgBuild);
+
 
 gulp.task('default', gulp.series(
     cleanDist,
-    gulp.parallel(htmlBuild, imgBuild, scssBuild, jsBuild),
+    gulp.parallel(htmlBuild, scssBuild, jsBuild, imgBuild),
     watcher
 ));
