@@ -16,7 +16,7 @@ const path = {
     },
     src : {
         html: 'src/*.html',
-        scss: 'src/scss/*.scss',
+        scss: 'src/scss/**/*.scss',
         js: 'src/js/*.js',
         img: 'src/img/**/*'
     }
@@ -67,10 +67,9 @@ const watcher = () => {
     });
 
     gulp.watch(path.src.html, htmlBuild).on('change', browserSync.reload);
-    gulp.watch(path.src.scss, scssBuild).on('change', browserSync.reload);
-    gulp.watch(path.src.js, jsBuild).on('change', browserSync.reload);
     gulp.watch(path.src.img, imgBuild).on('change', browserSync.reload);
-
+    gulp.watch(path.src.scss, scssBuild).on('change', browserSync.reload);
+    gulp.watch(path.src.js, jsBuild).on('change', browserSync.reload)
 };
 
 /************ T A S K S **************/

@@ -1,0 +1,72 @@
+.stock {
+  .stock-offer1 {
+    max-width: 555px;
+    height: $stock-bheight * 2 + 32px;
+    background-image: url(../img/stocks/1.jpg);
+    background-size: cover;
+  }
+  .stock-offer-double {
+    max-width: 453px;
+    height: ($stock-bheight - 60px)* 2 + 32px;
+    box-sizing: border-box;
+
+    @media (min-width: 576px) {
+      max-width: 555px;
+      height: $stock-bheight * 2 + 32px;
+    }
+  }
+  .stock-offer2 {
+    height: $stock-bheight - 60px;
+    background: url(../img/stocks/2.png) left no-repeat, url(../img/stocks/3.png) right no-repeat #e8edf7;
+    background-size: auto $stock-bheight - 60px;
+    padding-left: 32%;
+    line-height: 1;
+
+    @media (min-width: 576px) {
+      height: $stock-bheight;
+      background-size: auto $stock-bheight;
+    }
+
+    .offer2-title {
+      font-family: sans-serif;
+      font-size: 1rem;
+
+      @include scale-font(410px, 1.5rem);
+      @include scale-font(576px, 1.8rem);
+
+      .accented {
+        @media (min-width: 576px) {
+          font-weight: 900;
+        }
+      }
+    }
+    .offer2-subtitle {
+      font-family: sans-serif;
+      font-size: .7rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+
+      @include scale-font(410px, .9rem);
+      @include scale-font(576px, 1rem);
+    }
+    .offer2-price {
+      font-family: sans-serif;
+      font-size: 1.4rem;
+      color: $theme-color;
+
+      @include scale-font(410px, 2rem);
+      @include scale-font(576px, 2.3rem);
+    }
+  }
+  .stock-offer3 {
+    height: $stock-bheight - 60px;
+    background: url(../img/stocks/4.png) left no-repeat #fbf3f7;
+    background-size: auto $stock-bheight - 60px;
+
+    @media (min-width: 576px) {
+      height: $stock-bheight;
+      background-size: auto $stock-bheight;
+    }
+  }
+}
+
