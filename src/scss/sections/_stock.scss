@@ -52,7 +52,7 @@
     .offer2-price {
       font-family: sans-serif;
       font-size: 1.4rem;
-      color: $theme-color;
+      color: $main-color;
 
       @include scale-font(410px, 2rem);
       @include scale-font(576px, 2.3rem);
