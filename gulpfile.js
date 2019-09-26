@@ -18,7 +18,7 @@ const path = {
         html: 'src/*.html',
         scss: 'src/scss/*.scss',
         js: 'src/js/*.js',
-        img: 'src/img/*.*'
+        img: 'src/img/**/*'
     }
 };
 
@@ -26,6 +26,12 @@ const path = {
 const htmlBuild = () => (
     gulp.src(path.src.html)
         .pipe(gulp.dest(path.dist.html))
+        .pipe(browserSync.stream())
+);
+
+const imgBuild = () => (
+    gulp.src(path.src.img)
+        .pipe(gulp.dest(path.dist.img))
         .pipe(browserSync.stream())
 );
 
@@ -62,16 +68,20 @@ const watcher = () => {
 
     gulp.watch(path.src.html, htmlBuild).on('change', browserSync.reload);
     gulp.watch(path.src.scss, scssBuild).on('change', browserSync.reload);
-    gulp.watch(path.src.js, jsBuild).on('change', browserSync.reload)
+    gulp.watch(path.src.js, jsBuild).on('change', browserSync.reload);
+    gulp.watch(path.src.img, imgBuild).on('change', browserSync.reload);
+
 };
 
 /************ T A S K S **************/
 gulp.task('html', htmlBuild);
 gulp.task('scss', scssBuild);
 gulp.task('js', jsBuild);
+gulp.task('img', imgBuild);
+
 
 gulp.task('default', gulp.series(
     cleanDist,
-    gulp.parallel(htmlBuild, scssBuild, jsBuild),
+    gulp.parallel(htmlBuild, scssBuild, jsBuild, imgBuild),
     watcher
 ));
