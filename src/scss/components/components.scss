@@ -1,0 +1,18 @@
+@import "../variables";
+
+.section-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $main-color;
+  &-line-1 {
+    background-color: #e2e2e2;
+    height: 3px;
+    margin-bottom: 30px;
+  }
+  &-line-2 {
+    background-color: $main-color;
+    height: 3px;
+    width: 44px;
+  }
+}

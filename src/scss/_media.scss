@@ -1,0 +1,101 @@
+@import "variables";
+@import "mixins";
+
+
+@media (min-width: 768px) {
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .header-phone-icon {
+    display: inline-block;
+  }
+
+  .header-logo {
+    width: 165px;
+  }
+
+  .basket {
+    font-size: 20px;
+    &-wrapper {
+      width: 51px;
+      height: 49px;
+    }
+    &-items {
+      width: 28px;
+      height: 28px;
+      font-size: 14px;
+      top: 11px;
+      left: 38px;
+    }
+  }
+  .search-form {
+    padding-right: 125px;
+  }
+
+  .carousel-img {
+    height: 500px;
+    padding-top: 115px;
+  }
+
+  .top-slider {
+    &-text {
+      width: 100%;
+      padding-top: 80px;
+    }
+    &-title {
+      font-size: 54px;
+      margin-bottom: -8px;
+      &-1 {
+        font-weight: 300;
+      }
+    }
+    &-description {
+      font-size: 23px;
+    }
+  }
+  .our-features {
+    &-last {
+      margin-bottom: 65px;
+    }
+  }
+  .nav-link-tab {
+    padding: 5px 23.4px;
+  }
+  .furniture-gallery {
+    margin-bottom: 60px;
+    padding-right: 0;
+    padding-left: 0;
+    &-main-photo {
+      height: 415px;
+      padding-left: 0;
+    }
+  }
+}
+
+
+
+
+@media (min-width: 1200px) {
+  .carousel-img-1 {
+    background-position: 0 -210px;
+  }
+
+  .top-menu-small-screen {
+    display: none;
+  }
+
+  .top-menu-big-screen {
+    display: inline-block;
+  }
+  
+  .our-features {
+    margin-bottom: 15px;
+  }
+  
+  .furniture-gallery-banner {
+    display: block;
+  }
+
+}
