@@ -7,16 +7,18 @@ ol, ul {
   list-style: none;
 }
 
-.container {
+body {
   font-family: 'Poppins', sans-serif;;
 }
+
+/*****Navbar section*****/
 
 .navbar-wrapper {
   background: #434343;
   padding: 15px 0 9px 0;
 }
 
-.nav-item {
+.nav-item-menu {
   color: white;
   font-size: 13px;
   margin-right: 25px;
@@ -26,7 +28,7 @@ ol, ul {
   padding: 0 0 4px 0;
 }
 
-.nav-link {
+.nav-link-menu {
   display: inline-block;
   margin-left: 5px;
   color: white;
@@ -38,6 +40,8 @@ ol, ul {
     border-bottom: 1px solid white;
   }
 }
+
+/*****Header section*****/
 
 .header {
   background-color: $dark-grey;
@@ -62,6 +66,9 @@ ol, ul {
       color: white;
       border-bottom: 1px solid white;
     }
+  }
+  &-logo {
+    width: 114px;
   }
 }
 
@@ -92,6 +99,8 @@ ol, ul {
   }
 }
 
+/*****Top-menu section*****/
+
 .top-menu-wrapper {
   box-shadow: 0 3px 5px 0 #dcdcdc;
 }
@@ -99,6 +108,7 @@ ol, ul {
 .search-form {
   width: 227px;
   height: 47px;
+  font-size: 14px;
   margin: 18px 0;
   border: 1px solid $dark-grey;
 }
@@ -112,15 +122,15 @@ ol, ul {
 //  position: relative;
 //}
 
-.navbar-menu {
+.top-menu-small-screen {
   padding-left: 130px;
 }
 
-.navbar-burger-line {
-    height: 3px;
-    width: 29px;
-    margin-bottom: 2px;
-    background-color: black;
+.top-menu-burger-line {
+  height: 3px;
+  width: 29px;
+  margin-bottom: 2px;
+  background-color: black;
 }
 
 .top-menu-burger {
@@ -159,6 +169,26 @@ ol, ul {
   }
 }
 
+
+.top-menu-big-screen {
+  display: none;
+  //margin-top: -4px;
+  &-item {
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 28px 10px 35px 10px;
+    &:hover {
+      text-decoration: none;
+      color: white;
+      background-color: $main-color;
+      border-top: 4px solid black;
+    }
+  }
+}
+
+/*****Top-slider section*****/
+
 .top-slider {
   margin-bottom: 75px;
   &-text {
@@ -193,11 +223,11 @@ ol, ul {
   }
 }
 
-.carousel-img {   // Яклсь це вирішити. Можливо знайти іншу картинку такого самого розміру
+.carousel-img {
   height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 6.5%;
+  padding-top: 30px;
 }
 
 .carousel-img-1 {
@@ -220,6 +250,8 @@ ol, ul {
   }
 }
 
+
+/*****Our features section*****/
 
 .our-features {
   @include flex-center;
@@ -274,20 +306,206 @@ ol, ul {
       border: 1px solid #b7b7b7;
     }
   }
-}
-
-@media (min-width: 768px) {
-  .header-phone-icon {
-    display: inline-block;
-  }
-
-  .carousel-img {
-    height: 500px;
+  &-last {
+    margin-bottom: 85px;
   }
 }
 
-@media (min-width: 1200px) {
-  .top-slider-text {
-    width: 100%;
+
+
+/*Furniture Gallery section*/
+
+.furniture-gallery-wrapper {
+  height: 450px;
+  border: 1px solid #e2e2e2;
+  background-color: #f4f5f7;
 }
+
+.nav-link-tab.active {
+  text-decoration: none;
+  color: $main-color;
+  background-color: #f4f5f7;
+  border-top: 1px solid $main-color;
 }
+
+.nav-link-tab {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+  padding: 5px 10.2px;
+  margin-bottom: 1px;
+  background-color: white;
+  //border: 1px solid black;
+  &:hover {
+    text-decoration: none;
+    color: $main-color;
+    background-color: #f4f5f7;
+    border-top: 1px solid $main-color;
+  }
+}
+
+.furniture-gallery {  /*НА МД НЕ ПРАВИЛЬНИЙ РОЗМЫР. ПОРЫВНЯТИ*/
+  margin-bottom: 40px;
+  &-main-photo {
+    height: 328px;
+    padding-top: 10px;
+    padding-left: 50px;
+    position: relative;
+    &-left-side {
+      display: flex;
+      width: 60px;
+      flex-wrap: wrap;
+      margin-top: -230px;
+      &-icon {
+        @include flex-center;
+        width: 37px;
+        height: 37px;
+        border: 1px solid black;
+        margin: 8px;
+        z-index: 1;
+        &:hover {
+          cursor: pointer;
+          color: $main-color;
+          border-color: $main-color;
+        }
+      }
+    }
+    &-price {
+      width: 105px;
+      height: 105px;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      left: -80px;
+      text-align: center;
+      padding-top: 30px;
+      &-1 {
+        font-size: 19px;
+        font-weight: 600;
+      }
+      &-2 {
+        font-size: 14px;
+        text-decoration: line-through;
+      }
+    }
+    &-rating {
+      width: 249px;
+      height: 106px;
+      text-align: center;
+      background-color: white;
+      position: absolute;
+      bottom: 120px;
+      left: 155px;
+      &:before {
+        content: url("../img/furniture-gallery/triangle.png");
+        margin-right: 220px;
+      }
+      &:after {
+        content: url("../img/furniture-gallery/triangle-2.png");
+        margin-left: 220px;
+      }
+      &-text {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: -10px;
+      }
+      &-stars {
+        margin-top: -13px;
+      }
+    }
+  }
+}
+
+
+.furniture-gallery-slider {
+  height: 88px;
+  border: 1px solid #e2e2e2;
+}
+
+.furniture-gallery-slider-img-wrapper {
+  background-color: #d3d3d3;
+  width: 70px;
+  height: 70px;
+  margin: 8px 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.furniture-gallery-slider-img {
+  height: 65px;
+  padding-top: 10px;
+}
+
+.carousel-item-2 {
+  margin-right: 0;
+}
+
+.carousel-inner-2 .active + .carousel-item-2,
+.carousel-inner-2 .active + .carousel-item-2 + .carousel-item-2,
+.carousel-inner-2 .active + .carousel-item-2 + .carousel-item-2 + .carousel-item-2,
+.carousel-inner-2 .active + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2,
+.carousel-inner-2 .active + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 {
+  display: block;
+}
+
+.carousel-inner-2 .carousel-item-2.active:not(.carousel-item-2-right):not(.carousel-item-2-left) + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2,
+.carousel-inner-2 .carousel-item-2.active:not(.carousel-item-2-right):not(.carousel-item-2-left) + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 {
+  transition: none;
+}
+
+.carousel-item-2-next.carousel-item-2-left + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2,
+.carousel-item-2-next.carousel-item-2-left + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 {
+  position: relative;
+  transform: translate3d(-100%, 0, 0);
+  visibility: visible;
+}
+
+.carousel-item-2-prev.carousel-item-2-right + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2,
+.carousel-item-2-prev.carousel-item-2-right + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 {
+  position: relative;
+  transform: translate3d(100%, 0, 0);
+  visibility: visible;
+  display: block;
+}
+
+
+.furniture-gallery-banner {
+  display: none;
+  height: 603px;
+  //width: 555px;
+  //box-sizing: border-box;
+  padding: 50px 0 0 62px;
+  background: #e8edf7 url("../img/furniture-gallery/furniture-gallery-banner.png") no-repeat 40px 300px;
+  //margin-left: -15px;
+  //margin-right: -15px;
+  &-text {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  &-price {
+    font-size: 48px;
+    font-weight: 600;
+    color: #79ae30;
+  }
+  &-name {
+    font-size: 48px;
+    font-weight: 600;
+    color: $main-color;
+  }
+  &-btn {
+    outline: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    background-color: #79ae30;
+    padding: 20px 28px;
+  }
+}
+
+@import "media";
