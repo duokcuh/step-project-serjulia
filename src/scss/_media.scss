@@ -1,6 +1,204 @@
 @import "variables";
 @import "mixins";
 
+@media (min-width: 480px) {
+  .modal-login {
+    &-wrapper {
+      height: 330px;
+      width: 421px;
+      padding: 28px 38px 0 38px;
+    }
+    &-email {
+      height: 51px;
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+    &-password {
+      height: 51px;
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+    &-btn {
+      padding: 10px 38px;
+      font-size: 14px;
+    }
+    &-title {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .modal-register {
+    &-wrapper {
+      height: 398px;
+      width: 421px;
+      padding: 28px 38px 0 38px;
+    }
+    &-name {
+      height: 51px;
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+    &-email {
+      height: 51px;
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+    &-password {
+      height: 51px;
+      margin-bottom: 17px;
+      font-size: 15px;
+    }
+    &-btn {
+      padding: 10px 38px;
+      font-size: 14px;
+    }
+    &-title {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .nav-item-menu {
+    font-size: 13px;
+    margin-right: 25px;
+  }
+  .nav-link-tab {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  .header-phone-number {
+    font-size: 17px;
+  }
+  .header-logo {
+    width: 114px;
+  }
+  .search-form {
+    width: 227px;
+    font-size: 14px;
+  }
+  .top-menu-burger-press{
+    padding: 37px 6px 36px 107px;
+  }
+  .burger-dropdown-menu {
+    padding: 0 9.5px 5px 60px;
+  }
+  .modal-empty-cart {
+    &-wrapper {
+      height: 344px;
+      width: 421px;
+      margin-left: 5%;
+      padding: 50px 75px 0 75px;
+    }
+    &-text-1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    &-text-2 {
+      font-size: 28px;
+    }
+  }
+
+  .modal-cart {
+    &-wrapper {
+      height: 469px;
+      width: 420px;
+      padding: 56px 40px 136px 12px;
+      margin-left: 5%;
+    }
+    &-details {
+      padding: 15px 12px 10px 12px;
+      margin-bottom: 20px;
+      &-img {
+        min-height: 114px;
+        margin-right: 35px;
+      }
+      &-name {
+        font-size: 23px;
+      }
+      &-old-price {
+        font-size: 20px;
+      }
+      &-price {
+        width: 110px;
+        font-size: 20px;
+      }
+      &-quantity {
+        font-size: 15px;
+        margin-bottom: 10px;
+        &-number {
+          width: 80px;
+          font-size: 18px;
+        }
+        &-minus {
+          padding: 3px 16px 4px 16px;
+          font-size: 20px;
+        }
+        &-plus {
+          padding: 3px 14px 4px 14px;
+          font-size: 20px;
+        }
+      }
+      &-sum {
+        font-size: 20px;
+        margin-bottom: 8px;
+        &-number {
+          font-size: 22px;
+        }
+      }
+    }
+    &-total-sum {
+      font-size: 18px;
+    }
+    &-btn {
+      &-continue {
+        padding: 8px 0;
+        width: 130px;
+        font-size: 14px;
+      }
+
+      &-buy {
+        padding: 8px 0;
+        width: 130px;
+        font-size: 14px;
+      }
+      &-icon {
+        font-size: 20px;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .top-slider {
+    &-title {
+      font-size: 38px;
+    }
+    &-description {
+      font-size: 19px;
+    }
+  }
+  .furniture-gallery {
+    &-main-photo {
+      height: 328px;
+      padding-left: 157px;
+      &-left-side {
+        margin-top: -230px;
+      }
+      &-price {
+        top: 0;
+        left: -80px;
+      }
+      &-rating {
+        bottom: 120px;
+        left: 155px;
+      }
+    }
+    &-wrapper-slider {
+      top: 160px;
+    }
+  }
+}
+
 
 @media (min-width: 768px) {
   .container {
@@ -30,6 +228,55 @@
       left: 38px;
     }
   }
+  .modal-empty-cart {
+    &-wrapper {
+      height: 261px;
+      min-width: 555px;
+      padding: 30px 28px 0 28px;
+      margin-left: -5%;
+    }
+    &-text-1 {
+      margin-top: 15px;
+      margin-bottom: 38px;
+    }
+  }
+
+  .modal-cart {
+    &-wrapper {
+      height: 432px;
+      min-width: 720px;
+      margin-left: -22%;
+      padding: 56px 40px 136px 35px;
+    }
+    &-details {
+      &-img {
+        min-height: 134px;
+      }
+      &-wrapper-1 {
+        margin: 34px 0 0 212px;
+      }
+      &-name {
+        text-align: center;
+        margin-bottom: 20px;
+        &-wrapper {
+          margin-right: 150px;
+          text-align: left;
+        }
+      }
+      &-old-price {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      &-price {
+        display: inline-block;
+        text-align: center;
+      }
+      &-quantity {
+        display: inline-block;
+      }
+    }
+  }
+
   .search-form {
     padding-right: 125px;
   }
@@ -69,8 +316,38 @@
     padding-left: 0;
     &-main-photo {
       height: 415px;
-      padding-left: 0;
+      padding-left: 125px;
+      &-left-side {
+        margin-top: -310px;
+      }
+      &-price {
+        top: -85px;
+        left: 75px;
+      }
+      &-rating {
+        bottom: 125px;
+        left: 320px;
+      }
     }
+    &-wrapper-slider {
+      top: 153px;
+    }
+  }
+
+  .carousel-inner-1 .active + .carousel-item-1 + .carousel-item-1 + .carousel-item-1 + .carousel-item-1 + .carousel-item-1 {
+    display: block;
+  }
+
+  .carousel-inner-2 .active + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 + .carousel-item-2 {
+    display: block;
+  }
+
+  .carousel-inner-3 .active + .carousel-item-3 + .carousel-item-3 + .carousel-item-3 + .carousel-item-3 + .carousel-item-3  {
+    display: block;
+  }
+
+  .carousel-inner-4 .active + .carousel-item-4 + .carousel-item-4 + .carousel-item-4 + .carousel-item-4 + .carousel-item-4{
+    display: block;
   }
 }
 
@@ -78,6 +355,52 @@
 
 
 @media (min-width: 1200px) {
+  .modal-login {
+    &-wrapper {
+      width: 456px;
+    }
+  }
+  .modal-register {
+    &-wrapper {
+      width: 456px;
+    }
+  }
+  .modal-empty-cart-wrapper {
+      min-width: 1140px;
+      margin-left: -64%;
+    }
+
+  .modal-cart {
+    &-wrapper {
+      height: 672px;
+      min-width: 1140px;
+      margin-left: -64%;
+    }
+    &-details {
+      min-height: 218px;
+      &-img {
+        min-height: 160px;
+      }
+      &-name {
+        text-align: left;
+      }
+      &-wrapper {
+        justify-content: center;
+        margin-bottom: -138px;
+      }
+      &-quantity {
+        margin-left: 300px;
+        &-plus {
+          margin-right: 80px;
+        }
+      }
+      &-name {
+        &-wrapper {
+          margin-right: 534px;
+        }
+      }
+    }
+  }
   .carousel-img-1 {
     background-position: 0 -210px;
   }

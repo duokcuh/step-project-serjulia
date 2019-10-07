@@ -1,0 +1,60 @@
+@import "../variables";
+@import "../mixins";
+
+/*****Header section*****/
+
+.header {
+  background-color: $dark-grey;
+  height: 145px;
+  &-wrapper {
+    background-color: $dark-grey;
+  }
+  &-phone-icon {
+    display: none;
+    color: $main-color;
+    font-size: 28px;
+    margin-right: 10px;
+  }
+  &-phone-number {
+    margin-top: 3px;
+    color: white;
+    font-size: 12px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid $dark-grey;
+    &:hover {
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid white;
+    }
+  }
+  &-logo {
+    width: 74px;
+  }
+}
+
+.basket {
+  color: white;
+  margin-right: 12px;
+  font-size: 18px;
+  &-wrapper {
+    @include flex-center;
+    width: 45px;
+    height: 43px;
+    margin-right: 8px;
+    background-color: $main-color;
+    position: relative;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &-items {
+    @include flex-center;
+    background: $dark-grey;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    left: 32px;
+  }
+}
