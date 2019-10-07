@@ -1,0 +1,66 @@
+@import "../variables";
+@import "../mixins";
+
+/*****Top-slider section*****/
+
+.top-slider {
+  margin-bottom: 75px;
+  &-text {
+    @include flex-center;
+    height: 212px;
+    width: 93%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+  }
+  &-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+  }
+  &-description {
+    font-size: 12px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 35px;
+  }
+  &-btn {
+    outline: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    background-color: white;
+    padding: 20px 28px;
+  }
+}
+
+.carousel-img {
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 30px;
+}
+
+.carousel-img-1 {
+  background-image: url("../../img/top-slider/1.jpg");
+}
+
+.carousel-img-2 {
+  background-image: url("../../img/top-slider/2.jpg");
+}
+
+.carousel-arrow {
+  background-color: $dark-grey;
+  opacity: 1;
+  width: 50%;
+  height: 36px;
+  padding-bottom: 5px;
+  top: calc(100% - 32px);
+  &:hover {
+    background-color: $main-color;
+    opacity: 1;
+  }
+}

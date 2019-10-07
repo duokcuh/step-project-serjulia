@@ -4,7 +4,8 @@ const gulp = require('gulp'),
     babel = require('gulp-babel'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    uglify = require('gulp-uglify');
 
 const path = {
     dist: {
@@ -53,6 +54,13 @@ const jsBuild = () => (
         .pipe(browserSync.stream())
 );
 
+const minify = async function() {
+    gulp.src('dist/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest(path.dist.js));
+};
+
+
 const cleanDist = () => (
     gulp.src(path.dist.self, {allowEmpty: true})
         .pipe(clean())
@@ -77,10 +85,12 @@ gulp.task('html', htmlBuild);
 gulp.task('scss', scssBuild);
 gulp.task('js', jsBuild);
 gulp.task('img', imgBuild);
+gulp.task('jsMin', minify);
 
 
 gulp.task('default', gulp.series(
     cleanDist,
     gulp.parallel(htmlBuild, scssBuild, jsBuild, imgBuild),
+    minify,
     watcher
 ));

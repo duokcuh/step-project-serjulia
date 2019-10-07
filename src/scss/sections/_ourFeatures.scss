@@ -1,0 +1,62 @@
+@import "../variables";
+@import "../mixins";
+
+/*****Our features section*****/
+
+.our-features {
+  @include flex-center;
+  flex-direction: column;
+  width: 260px;
+  height: 120px;
+  margin: 0 auto 65px auto;
+  border: 1px solid #b7b7b7;
+  line-height: 0.7;
+  cursor: pointer;
+  &:hover .our-features-icon-border-big {
+    border-color: $main-color;
+  }
+  &:hover .our-features-icon-border-small {
+    border-color: $main-color;
+    background-color: $main-color;
+  }
+  &:hover .our-features-icon {
+    color: white;
+  }
+  &:hover .our-features-name {
+    color: #e0a38e;
+  }
+  &:hover .our-features-description {
+    color: #e0a38e;
+  }
+  &-name {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -30px;
+  }
+  &-description {
+    text-transform: uppercase;
+    font-size: 23px;
+    font-weight: 300;
+  }
+  &-icon {
+    font-size: 20px;
+    &-border-big {
+      @include flex-center;
+      background-color: white;
+      margin-top: -160px;
+      width: 75px;
+      height: 75px;
+      border: 1px solid #b7b7b7;
+    }
+    &-border-small {
+      @include flex-center;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #b7b7b7;
+    }
+  }
+  &-last {
+    margin-bottom: 85px;
+  }
+}

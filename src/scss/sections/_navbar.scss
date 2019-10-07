@@ -1,0 +1,32 @@
+@import "../variables";
+@import "../mixins";
+
+/*****Navbar section*****/
+
+.navbar-wrapper {
+  background: #434343;
+  padding: 15px 0 9px 0;
+}
+
+.nav-item-menu {
+  color: white;
+  font-size: 11px;
+  margin-right: 10px;
+}
+
+.nav-text {
+  padding: 0 0 4px 0;
+}
+
+.nav-link-menu {
+  display: inline-block;
+  margin-left: 5px;
+  color: white;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #434343;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid white;
+  }
+}
