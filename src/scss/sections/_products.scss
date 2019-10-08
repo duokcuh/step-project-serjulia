@@ -1,3 +1,5 @@
+/*PRODUCTS*/
+
 .products-header {
   border-bottom: 1px solid;
 
@@ -37,7 +39,7 @@
       left: 0;
       top: 213px;
     }
-    .add-to-card-btn {
+    .add-to-cart-btn {
       @extend .quick-view-btn;
       left: 11px;
     }
@@ -82,4 +84,5 @@
   height: 50px;
   background-color: #eeeeee;
   font-size: 21px;
+  margin-bottom: 60px;
 }

@@ -1,43 +1,76 @@
-/*Product item hover*/
-$('.product-item').on('mouseenter mouseleave', (event) => {
-    $(event.currentTarget).find('.product-overlay').fadeToggle(200);
-    $(event.currentTarget).find('.product-title').toggleClass('text-dark');
-    $(event.currentTarget).find('.product-footer-price').toggleClass('bg-dark');
-});
+/*PRODUCTS*/
 
-/*window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1200) console.log(window.innerWidth);
+/*Current and previous product prices*/
 
-});*/
+const productPrices = [
+    {current: 30, old: 35},
+    {current: 15, old: 0},
+    {current: 25, old: 35},
+    {current: 30, old: 0},
+    {current: 15, old: 0},
+    {current: 25, old: 40},
+    {current: 30, old: 0},
+    {current: 15, old: 0},
+    {current: 25, old: 30},
+    {current: 30, old: 0},
+    {current: 15, old: 0},
+    {current: 25, old: 35},
+    {current: 30, old: 0},
+    {current: 15, old: 0},
+    {current: 25, old: 50},
+    {current: 30, old: 0},
+    {current: 15, old: 0},
+    {current: 25, old: 35},
+    {current: 15, old: 0},
+    {current: 25, old: 35},
+];
 
-/*quantity of product images*/
-let imgQuantity = 20;
+const $productsList = $('.products-list');
+const $productsMoreBtn = $('.products-add-more-btn');
 
-setImgLink();
 
-$('.products-add-more-btn').click(() => {
-    if (window.innerWidth >= 1200) {
-        for (let i = 1; imgQuantity > 0 && i <= 9; imgQuantity--, i++) addProduct();
-        setImgLink();
-    } else if (window.innerWidth >= 768) {
-        for (let i = 1;  i <= 4; imgQuantity--, i++) {
-            const $mdLast = $('.product-item.d-md-block:last');
-            if ($mdLast.next().length)
-                $mdLast.next().addClass('d-md-block');
-                else if(imgQuantity > 0) addProduct();
-                else $mdLast.next().addClass('d-md-block');
-        setImgLink();
-        }
+(function showProducts() {
+    for (let i = 2; i <= 9; i++) {
+        addProduct();
+        if (i > 3) $productsList.children(':last-child').addClass('d-none');
+        if (i === 4) $productsList.children(':last-child').addClass('d-md-block');
+        if (i > 4) $productsList.children(':last-child').addClass('d-xl-block');
     }
+    setProductData();
+})();
 
+function addProduct() {
+    $('#product-item-template').clone().removeAttr('id').appendTo($productsList);
+}
+
+function setProductData() {
+    $productsList.children().each((index, elem) => {
+        $(elem).children('.product-img').attr('src', `img/products/furniture/${index + 1}.png`);
+        $(elem).find('.product-footer-price').text(`$${productPrices[index].current.toFixed(2)}`);
+        if (!!productPrices[index].old) {
+            $(elem).find('.product-footer-price-old del').text(`$${productPrices[index].old.toFixed(2)}`);
+        }
+    })
+}
+
+
+/*Product item hover*/
+
+$productsList.on('mouseenter', '.product-item', event => {
+    $(event.currentTarget).find('.product-overlay').fadeIn();
+    $(event.currentTarget).find('.product-title').removeClass('text-dark');
+    $(event.currentTarget).find('.product-footer-price').removeClass('bg-dark');
+});
+$productsList.on('mouseleave', '.product-item', event => {
+    $(event.currentTarget).find('.product-overlay').fadeOut();
+    $(event.currentTarget).find('.product-title').addClass('text-dark');
+    $(event.currentTarget).find('.product-footer-price').addClass('bg-dark');
 });
 
 
-function setImgLink() {
-    const $productImg = $('.product-img');
-    imgQuantity = 20 - $productImg.length;
-    $productImg.each(i => $productImg.eq(i).attr('src', `img/products/furniture/${i+1}.png`));
-}
-function addProduct() {
-    $('#product-item-template').clone().removeAttr('id').fadeIn(300).appendTo($('.products-list'))
-}
+$productsMoreBtn.click(() => {
+    $productsList.children(':not(:first-child)').remove();
+    for (let i = 2; i <= productPrices.length; i++) addProduct();
+    setProductData();
+    $productsMoreBtn.attr('disabled', 'true');
+});
